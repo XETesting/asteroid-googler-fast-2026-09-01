@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Instrument Serif", "Times New Roman", serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --color-bg: #07080b;
+  --color-bg-elevated: #10131a;
+  --color-surface: #141820;
+  --color-surface-2: #1c212c;
+  --color-fg: #e8e6e1;
+  --color-muted: #8b919c;
+  --color-subtle: #6a7180;
+  --color-accent: #9eb4c8;
+  --color-accent-fg: #0a0c10;
+  --color-clay: #c4a574;
+  --color-border: color-mix(in oklab, var(--color-fg) 12%, transparent);
+  --color-border-strong: color-mix(in oklab, var(--color-fg) 22%, transparent);
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --text-2xs: 0.6875rem;
+  --shadow-panel: 0 0 0 1px color-mix(in oklab, var(--color-fg) 10%, transparent),
+    0 18px 40px -24px rgb(0 0 0 / 0.7);
+}
+
+@layer base {
+  html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  html, body, #app { background: var(--color-bg); color: var(--color-fg); min-height: 100dvh; }
+  button:not(:disabled), [role="button"]:not(:disabled) { cursor: pointer; }
+  h1, h2, h3 { text-wrap: balance; }
+}
+
+@layer components {
+  .panel {
+    background: color-mix(in oklab, var(--color-bg-elevated) 86%, transparent);
+    box-shadow: var(--shadow-panel);
+    backdrop-filter: blur(14px);
+  }
+}
