@@ -15,6 +15,8 @@ import {
   Trajectory,
 } from "./world";
 
+const TEX = "https://raw.githubusercontent.com/XETesting/asteroid-googler-expert-2026-08-25/main/public/textures";
+
 function SimClock() {
   const acc = useRef(0);
   useFrame((_, delta) => {
@@ -31,10 +33,10 @@ function SimClock() {
 
 export function Scene() {
   const [dayMap, nightMap, moonMap, asteroidMap] = useTexture([
-    "/textures/earth-day.jpg",
-    "/textures/earth-night.jpg",
-    "/textures/moon.jpg",
-    "/textures/asteroid.jpg",
+    `${TEX}/earth-day.jpg`,
+    `${TEX}/earth-night.jpg`,
+    `${TEX}/moon.jpg`,
+    `${TEX}/asteroid.jpg`,
   ]);
 
   useLayoutEffect(() => {
